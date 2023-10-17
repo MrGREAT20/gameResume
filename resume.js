@@ -5,7 +5,7 @@ let config = {
 
         mode: Phaser.Scale.FIT,
         width:(1.5)*(window.innerWidth),
-        height:(1.5)*window.innerHeight,
+        height:(1.5)*(window.innerHeight),
 
         // width:800,
         // height:600,
@@ -129,34 +129,40 @@ function create(){
         repeat: -1
     })
 
-    let education = this.add.image(620,990,'education');
+    let bmpText = this.add.bitmapText(10, H-200,'carrier_command','Start!',12);
+    this.add.bitmapText(10, H-270, 'carrier_command', 'Click on Images for viewing', 10);
+    this.add.bitmapText(10, H-250, 'carrier_command', 'Press -> to move Right', 10);
+    this.add.bitmapText(10, H-230, 'carrier_command', 'Press <- to move Left', 10);
+
+    console.log(H); //1113
+    let education = this.add.image(620,H-123,'education');
     education.setScale(0.1);
-    this.add.bitmapText(450, 850,'carrier_command','Education',12);
+    this.add.bitmapText(450, H-270,'carrier_command','Education',12);
 
 
 
-    let express = this.add.image(1025, 990, 'express');
+    let express = this.add.image(1025, H-123, 'express');
     express.setScale(0.1);
 
     
-    let languages = this.add.image(1225, 990, 'language');
+    let languages = this.add.image(1225, H-123, 'language');
     languages.setScale(0.1);
-    this.add.bitmapText(1103, 850,'carrier_command','Skills',12);
+    this.add.bitmapText(1103, H-270,'carrier_command','Skills',12);
 
 
-    let libraries = this.add.image(1425, 990, 'libraries');
+    let libraries = this.add.image(1425, H-123, 'libraries');
     libraries.setScale(0.1);
 
-    let database = this.add.image(1625, 990, 'database');
+    let database = this.add.image(1625, H-123, 'database');
     database.setScale(0.1);
     //this.add.bitmapText(1103, 850,'carrier_command','Skills',12);
 
 
 
-    this.add.bitmapText(1850, 720,'carrier_command','Projects',12);
+    this.add.bitmapText(1850, H-393,'carrier_command','Projects',12);
 
     //1910
-    let project1 = this.add.image(1910, 920, 'project1');
+    let project1 = this.add.image(1910, H-193, 'project1');
     project1.setScale(0.3);
     const linkElement = document.createElement('a');
     linkElement.id = 'project1';
@@ -175,7 +181,7 @@ function create(){
     });
 
     //2010
-    let project2 = this.add.image(2190, 920, 'project2');
+    let project2 = this.add.image(2190, H-193, 'project2');
     project2.setScale(0.4);
     const linkElement1 = document.createElement('a');
     linkElement1.id = 'project2';
@@ -193,7 +199,7 @@ function create(){
     window.open(linkElement1.href, linkElement1.target);
     });
 
-    let project3 = this.add.image(2470, 920, 'project3');
+    let project3 = this.add.image(2470, H-193, 'project3');
     project3.setScale(0.4);
     const linkElement2 = document.createElement('a');
     linkElement2.id = 'project3';
@@ -213,9 +219,9 @@ function create(){
 
 
 
-    this.add.bitmapText(2800, 720,'carrier_command','Achievements',12);
+    this.add.bitmapText(2800, H-393,'carrier_command','Achievements',12);
 
-    let project4 = this.add.image(3000, 920, 'codeforces');
+    let project4 = this.add.image(3000, H-193, 'codeforces');
     project4.setScale(0.1);
     const linkElement3 = document.createElement('a');
     linkElement3.id = 'project4';
@@ -234,7 +240,7 @@ function create(){
     });
 
 
-    let project5 = this.add.image(3250, 920, 'codechef');
+    let project5 = this.add.image(3250, H-193, 'codechef');
     project5.setScale(0.1);
     const linkElement4 = document.createElement('a');
     linkElement4.id = 'project5';
@@ -252,7 +258,7 @@ function create(){
     window.open(linkElement4.href, linkElement4.target);
     });
 
-    let project6 = this.add.image(3500, 920, 'leetcode');
+    let project6 = this.add.image(3500, H-193, 'leetcode');
     project6.setScale(0.1);
     const linkElement5 = document.createElement('a');
     linkElement5.id = 'project6';
@@ -273,7 +279,7 @@ function create(){
 
 
     //3750
-    let project7 = this.add.image(3750, 920, 'icpc');
+    let project7 = this.add.image(3750, H-193, 'icpc');
     project7.setScale(0.15);
     const linkElement6 = document.createElement('a');
     linkElement6.id = 'project6';
@@ -293,7 +299,7 @@ function create(){
 
 
 
-    let project8 = this.add.image(4000, 920, 'meta');
+    let project8 = this.add.image(4000, H-193, 'meta');
     project8.setScale(0.15);
     const linkElement7 = document.createElement('a');
     linkElement7.id = 'project8';
@@ -312,7 +318,7 @@ function create(){
     });
 
 
-    let drawings = this.add.image(4400, 890, 'drawings');
+    let drawings = this.add.image(4400, H-223, 'drawings');
     drawings.setScale(0.2);
     
     //lets add the character here
@@ -362,10 +368,6 @@ function create(){
     //add a collision detection between player and ground
     this.physics.add.collider(platformGroup, this.player);
 
-    let bmpText = this.add.bitmapText(10, H-200,'carrier_command','Start!',12);
-    this.add.bitmapText(10, H-270, 'carrier_command', 'Click on Images for viewing', 10);
-    this.add.bitmapText(10, H-250, 'carrier_command', 'Press -> to move Right', 10);
-    this.add.bitmapText(10, H-230, 'carrier_command', 'Press <- to move Left', 10);
     //bmpText.inputEnabled = true;
     // bmpText.input.enableDrag();
 
