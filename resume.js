@@ -117,17 +117,27 @@ function create(){
         ray.depth = -1;
         rays.push(ray);
     }
-    console.log(rays);
-    this.tweens.add({
-        targets: rays,
-        props:{
-            angle:{
-                value: "+20",
-            }
-        },
-        duration: 8000,
-        repeat: -1
-    })
+    //console.log(rays);
+    // this.tweens.add({
+    //     targets: rays,
+    //     props:{
+    //         angle:{
+    //             value: 20,
+    //         }
+    //     },
+    //     duration: 6000,
+    //     repeat: -1
+    // });
+    rays.forEach(ray => {
+        this.tweens.add({
+            targets: ray,
+            props: {
+                angle: { value: ray.angle + 20 } // Adding 20 degrees to the current angle
+            },
+            duration: 8000,
+            repeat: -1
+        });
+    });
 
     let bmpText = this.add.bitmapText(10, H-200,'carrier_command','Start!',12);
     this.add.bitmapText(10, H-270, 'carrier_command', 'Click on Images for viewing', 10);
