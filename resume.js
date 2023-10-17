@@ -59,6 +59,7 @@ function preload(){
     this.load.image("icpc", "Assests/tree_board_icpc.png");
     this.load.image("meta", "Assests/tree_board_meta.png");
     this.load.image("ray", "Assests/ray.png");
+    this.load.image("drawings", "Assests/tree_drawings.png");
     //this.load.image("project1", "A")
 }
 function create(){
@@ -128,7 +129,7 @@ function create(){
         repeat: -1
     })
 
-    let education = this.add.image(572,990,'education');
+    let education = this.add.image(620,990,'education');
     education.setScale(0.1);
     this.add.bitmapText(450, 850,'carrier_command','Education',12);
 
@@ -157,36 +158,162 @@ function create(){
     //1910
     let project1 = this.add.image(1910, 920, 'project1');
     project1.setScale(0.3);
-    //this.add.button(1910, 920, 'project1', () => {window.open(`https://github.com/MrGREAT20?tab=repositories`)});
+    const linkElement = document.createElement('a');
+    linkElement.id = 'project1';
+    linkElement.href = 'https://github.com/MrGREAT20?tab=repositories'; // Replace with your desired URL
+    linkElement.target = '_blank'; // Open the link in a new tab/window
+    linkElement.style.position = 'absolute';
+    linkElement.style.top = '920px'; // Adjust this value
+    linkElement.style.left = '2190px'; // Adjust this value
+    linkElement.style.width = `${project1.displayWidth}px`;
+    linkElement.style.height = `${project1.displayHeight}px`;
+    linkElement.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement);
+    project1.setInteractive();
+    project1.on('pointerdown', () => {
+    window.open(linkElement.href, linkElement.target);
+    });
 
     //2010
     let project2 = this.add.image(2190, 920, 'project2');
     project2.setScale(0.4);
+    const linkElement1 = document.createElement('a');
+    linkElement1.id = 'project2';
+    linkElement1.href = 'https://github.com/MrGREAT20/CricInfoScrapper'; // Replace with your desired URL
+    linkElement1.target = '_blank'; // Open the link in a new tab/window
+    linkElement1.style.position = 'absolute';
+    linkElement1.style.top = '920px'; // Adjust this value
+    linkElement1.style.left = '2190px'; // Adjust this value
+    linkElement1.style.width = `${project2.displayWidth}px`;
+    linkElement1.style.height = `${project2.displayHeight}px`;
+    linkElement1.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement1);
+    project2.setInteractive();
+    project2.on('pointerdown', () => {
+    window.open(linkElement1.href, linkElement1.target);
+    });
 
     let project3 = this.add.image(2470, 920, 'project3');
     project3.setScale(0.4);
+    const linkElement2 = document.createElement('a');
+    linkElement2.id = 'project3';
+    linkElement2.href = 'https://github.com/MrGREAT20/news_app'; // Replace with your desired URL
+    linkElement2.target = '_blank'; // Open the link in a new tab/window
+    linkElement2.style.position = 'absolute';
+    linkElement2.style.top = '920px'; // Adjust this value
+    linkElement2.style.left = '2190px'; // Adjust this value
+    linkElement2.style.width = `${project3.displayWidth}px`;
+    linkElement2.style.height = `${project3.displayHeight}px`;
+    linkElement2.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement2);
+    project3.setInteractive();
+    project3.on('pointerdown', () => {
+    window.open(linkElement2.href, linkElement2.target);
+    });
 
 
 
     this.add.bitmapText(2800, 720,'carrier_command','Achievements',12);
 
-    let cf = this.add.image(3000, 920, 'codeforces');
-    cf.setScale(0.1)
+    let project4 = this.add.image(3000, 920, 'codeforces');
+    project4.setScale(0.1);
+    const linkElement3 = document.createElement('a');
+    linkElement3.id = 'project4';
+    linkElement3.href = 'https://codeforces.com/profile/Great_20'; // Replace with your desired URL
+    linkElement3.target = '_blank'; // Open the link in a new tab/window
+    linkElement3.style.position = 'absolute';
+    linkElement3.style.top = '920px'; // Adjust this value
+    linkElement3.style.left = '2190px'; // Adjust this value
+    linkElement3.style.width = `${project4.displayWidth}px`;
+    linkElement3.style.height = `${project4.displayHeight}px`;
+    linkElement3.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement3);
+    project4.setInteractive();
+    project4.on('pointerdown', () => {
+    window.open(linkElement3.href, linkElement3.target);
+    });
 
-    let cc = this.add.image(3250, 920, 'codechef');
-    cc.setScale(0.1)
 
-    let lc = this.add.image(3500, 920, 'leetcode');
-    lc.setScale(0.1)
+    let project5 = this.add.image(3250, 920, 'codechef');
+    project5.setScale(0.1);
+    const linkElement4 = document.createElement('a');
+    linkElement4.id = 'project5';
+    linkElement4.href = 'https://www.codechef.com/users/mrgreat_20'; // Replace with your desired URL
+    linkElement4.target = '_blank'; // Open the link in a new tab/window
+    linkElement4.style.position = 'absolute';
+    linkElement4.style.top = '920px'; // Adjust this value
+    linkElement4.style.left = '2190px'; // Adjust this value
+    linkElement4.style.width = `${project5.displayWidth}px`;
+    linkElement4.style.height = `${project5.displayHeight}px`;
+    linkElement4.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement4);
+    project5.setInteractive();
+    project5.on('pointerdown', () => {
+    window.open(linkElement4.href, linkElement4.target);
+    });
+
+    let project6 = this.add.image(3500, 920, 'leetcode');
+    project6.setScale(0.1);
+    const linkElement5 = document.createElement('a');
+    linkElement5.id = 'project6';
+    linkElement5.href = 'https://leetcode.com/Great123/'; // Replace with your desired URL
+    linkElement5.target = '_blank'; // Open the link in a new tab/window
+    linkElement5.style.position = 'absolute';
+    linkElement5.style.top = '920px'; // Adjust this value
+    linkElement5.style.left = '2190px'; // Adjust this value
+    linkElement5.style.width = `${project6.displayWidth}px`;
+    linkElement5.style.height = `${project6.displayHeight}px`;
+    linkElement5.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement5);
+    project6.setInteractive();
+    project6.on('pointerdown', () => {
+    window.open(linkElement5.href, linkElement5.target);
+    });
+
+
 
     //3750
-    let icpc = this.add.image(3750, 920, 'icpc');
-    icpc.setScale(0.15);
+    let project7 = this.add.image(3750, 920, 'icpc');
+    project7.setScale(0.15);
+    const linkElement6 = document.createElement('a');
+    linkElement6.id = 'project6';
+    linkElement6.href = 'https://drive.google.com/file/d/15LT6ZY3RthjVFHL-5Qqzo-1rlagbzCOq/view'; // Replace with your desired URL
+    linkElement6.target = '_blank'; // Open the link in a new tab/window
+    linkElement6.style.position = 'absolute';
+    linkElement6.style.top = '920px'; // Adjust this value
+    linkElement6.style.left = '2190px'; // Adjust this value
+    linkElement6.style.width = `${project7.displayWidth}px`;
+    linkElement6.style.height = `${project7.displayHeight}px`;
+    linkElement6.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement6);
+    project7.setInteractive();
+    project7.on('pointerdown', () => {
+    window.open(linkElement6.href, linkElement6.target);
+    });
 
-    let meta = this.add.image(4000, 920, 'meta');
-    meta.setScale(0.15);
 
 
+    let project8 = this.add.image(4000, 920, 'meta');
+    project8.setScale(0.15);
+    const linkElement7 = document.createElement('a');
+    linkElement7.id = 'project8';
+    linkElement7.href = 'https://www.facebook.com/codingcompetitions/hacker-cup/2022/certificate/3286653384956061'; // Replace with your desired URL
+    linkElement7.target = '_blank'; // Open the link in a new tab/window
+    linkElement7.style.position = 'absolute';
+    linkElement7.style.top = '920px'; // Adjust this value
+    linkElement7.style.left = '2190px'; // Adjust this value
+    linkElement7.style.width = `${project8.displayWidth}px`;
+    linkElement7.style.height = `${project8.displayHeight}px`;
+    linkElement7.style.zIndex = '1'; // Make sure the link is on top of the image
+    this.game.canvas.parentElement.appendChild(linkElement7);
+    project8.setInteractive();
+    project8.on('pointerdown', () => {
+    window.open(linkElement7.href, linkElement7.target);
+    });
+
+
+    let drawings = this.add.image(4400, 890, 'drawings');
+    drawings.setScale(0.2);
     
     //lets add the character here
     //let player = this.add.sprite(100, H-140, 'character', 4); 
@@ -236,6 +363,9 @@ function create(){
     this.physics.add.collider(platformGroup, this.player);
 
     let bmpText = this.add.bitmapText(10, H-200,'carrier_command','Start!',12);
+    this.add.bitmapText(10, H-270, 'carrier_command', 'Click on Images for viewing', 10);
+    this.add.bitmapText(10, H-250, 'carrier_command', 'Press -> to move Right', 10);
+    this.add.bitmapText(10, H-230, 'carrier_command', 'Press <- to move Left', 10);
     //bmpText.inputEnabled = true;
     // bmpText.input.enableDrag();
 
